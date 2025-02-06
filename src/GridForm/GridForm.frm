@@ -91,7 +91,7 @@ Private Sub AddList(Optional TileName As String)
     SidebarGrid.RaiseTileHovered TileName
     Grid.RemoveAll
     Dim Tile As Range
-    For Each Tile In DataTable.ListColumns(TileName).DataBodyRange
+    For Each Tile In DataTable.ListColumns(TileName).DataBodyRange.Cells.SpecialCells(xlCellTypeConstants)
         Grid.AddGridTile Tile, 2, 1, SecondaryColor, FontColor
     Next
 End Sub
